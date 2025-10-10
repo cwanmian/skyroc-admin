@@ -1,6 +1,10 @@
 # Changelog
 
 
+## [v2.1.2](https://github.com/Ohh-889/soybean-admin-react/compare/v2.1.1...v2.1.2) (2025-10-11)
+
+### &nbsp;&nbsp;&nbsp;❤️ Contributors
+
 ## [v2.1.1](https://github.com/soybeanjs/soybean-admin-react/compare/v2.1.0...v2.1.1) (2025-10-11)
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
