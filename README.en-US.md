@@ -17,13 +17,23 @@ This project is based on the outstanding open-source project [Soybean Admin](htt
 
 ## Introduction
 
-[`React SkyrocAdmin`](https://github.com/Ohh-889/skyroc-admin) is a fresh and elegant admin panel template built on the React19 stack. It adopts the latest frontend technologies:
+[`React SkyrocAdmin`](https://github.com/Ohh-889/skyroc-admin) is a cutting-edge, powerful, and elegantly architected enterprise-grade admin template.
+
+**Why Choose React SkyrocAdmin?**
+
+- 🎯 **Cutting-Edge**: Built with 2025's latest frontend stack (React 19, Vite 6, TypeScript 5.7), staying ahead of the curve
+- 💪 **Powerful**: Integrates industry best practices like TanStack Query and Redux Toolkit, providing complete enterprise solutions
+- ✨ **Elegant Architecture**: Clear layered architecture, modular design, comprehensive type system - exemplary code quality
+- 📐 **Highly Standardized**: Strict code conventions, unified project structure, standardized development workflow, perfect for team collaboration
+
+Built with the latest frontend technologies:
 
 ### Core Tech Stack
 
 - 🚀 **React 19** - Latest React version with cutting-edge features
 - 🛤️ **React Router V7** - Powerful routing management system
 - 📦 **Redux Toolkit** - Modern state management solution
+- 🔄 **TanStack Query (React Query) 5** - Powerful server state management solution
 - 🎨 **Ant Design 5.24** - Enterprise-level UI component library
 - ⚡️ **Vite 6** - Lightning-fast development build tool
 - 🎯 **TypeScript 5.7** - Complete type system
@@ -36,6 +46,8 @@ This project is based on the outstanding open-source project [Soybean Admin](htt
 - ⚡️ **Ready to Use** - No complex configuration, start developing quickly
 - 🛠️ **Rich Components** - Built-in business components and theme configuration options
 - 📋 **Convention-based Routing** - Automated file routing system, Next.js-like development experience
+- 🔄 **Data Management** - Integrated TanStack Query for elegant server state management with auto-caching and revalidation
+- 🏗️ **Architecture Design** - Clear layered service architecture with separated URLs, Keys, and Hooks for high modularity
 - 🎨 **Theme System** - Dark mode, multiple theme colors, layout configurations
 - 🌍 **Internationalization** - Complete i18n solution with multi-language support
 - 🔐 **Permission Management** - Role-based access control system (RBAC)
@@ -77,6 +89,7 @@ Current Version: **v2.1.2**
 | React | 19.0.0 | Core framework |
 | React Router | 7.2.0 | Routing management |
 | Redux Toolkit | 2.5.1 | State management |
+| TanStack Query | 5.90.8 | Data fetching and caching |
 | Ant Design | 5.24.1 | UI component library |
 | Vite | 6.1.1 | Build tool |
 | TypeScript | 5.7.3 | Type system |
@@ -172,7 +185,14 @@ soybean-admin-react/
 │   │   ├── (blank)/       # Blank layout pages
 │   │   └── _builtin/      # Built-in pages
 │   ├── router/             # Router configuration
-│   ├── service/            # API services
+│   ├── service/            # API service layer (elegant layered architecture) ✨
+│   │   ├── api/           # API request functions
+│   │   ├── enums/         # Business enums
+│   │   ├── hooks/         # React Query Hooks wrapper
+│   │   ├── keys/          # React Query Keys global management
+│   │   ├── types/         # TypeScript type definitions
+│   │   ├── urls/          # API URL constants
+│   │   └── request/       # Request config and interceptors
 │   ├── store/              # Redux state management
 │   ├── styles/             # Global styles
 │   ├── theme/              # Theme configuration
@@ -292,6 +312,101 @@ pnpm preview
 - **Dynamic Switching**: Real-time language switching without refresh
 - **Antd Integration**: Complete Antd component internationalization
 - **Dayjs Integration**: Date and time internationalization support
+
+### 🔄 Data Management
+
+#### TanStack Query Integration
+
+The project deeply integrates TanStack Query (React Query), providing an elegant and powerful server state management solution:
+
+**Architecture Design**
+
+Adopts a layered design with clear and elegant code organization:
+
+- **urls/**: Centralized URL constant management, avoiding hard-coding
+  ```typescript
+  // src/service/urls/auth.ts
+  export const AUTH_URLS = {
+    LOGIN: '/auth/login',
+    GET_USER_INFO: '/auth/getUserInfo',
+    REFRESH_TOKEN: '/auth/refreshToken'
+  } as const;
+  ```
+
+- **keys/**: Global unique React Query Keys management
+  ```typescript
+  // src/service/keys/index.ts
+  export const QUERY_KEYS = {
+    AUTH: {
+      USER_INFO: ['auth', 'userInfo'] as const
+    }
+  } as const;
+  ```
+
+- **api/**: Pure API request functions
+  ```typescript
+  // src/service/api/auth.ts
+  export function fetchLogin(userName: string, password: string) {
+    return request<Api.Auth.LoginToken>({
+      url: AUTH_URLS.LOGIN,
+      method: 'post',
+      data: { userName, password }
+    });
+  }
+  ```
+
+- **hooks/**: React Query Hooks wrapper
+  ```typescript
+  // src/service/hooks/useAuth.ts
+  export function useLogin() {
+    return useMutation({
+      mutationKey: MUTATION_KEYS.AUTH.LOGIN,
+      mutationFn: ({ userName, password }) => fetchLogin(userName, password)
+    });
+  }
+  ```
+
+**Core Features**
+
+- ✨ **Auto Caching**: Smart cache management, reducing unnecessary network requests
+- 🔄 **Auto Revalidation**: Automatically refetch stale data to keep it fresh
+- ⚡️ **Concurrent Requests**: Automatic deduplication and batching of concurrent requests
+- 🎯 **Optimistic Updates**: Support for optimistic UI updates, improving user experience
+- 🔌 **Offline Support**: Data caching and synchronization in offline mode
+- 📊 **DevTools**: Powerful developer tools for real-time request status monitoring
+
+**Usage Example**
+
+```typescript
+// Use in components
+import { useLogin, useUserInfo } from '@/service/hooks';
+
+function LoginPage() {
+  const { mutate: login, isPending } = useLogin();
+  const { data: userInfo, isLoading } = useUserInfo();
+
+  const handleLogin = () => {
+    login({ userName: 'admin', password: '123456' }, {
+      onSuccess: (data) => {
+        // Handle successful login
+      }
+    });
+  };
+
+  return <button onClick={handleLogin} disabled={isPending}>Login</button>;
+}
+```
+
+**Layered Architecture Benefits**
+
+This layered architecture design brings numerous advantages:
+
+1. **Clear Responsibilities**: Each layer has a clear responsibility, easy to understand and maintain
+2. **Type Safety**: Complete TypeScript type support, full-chain type safety from API to UI
+3. **Easy Testing**: Independent layers facilitate unit testing and integration testing
+4. **Highly Reusable**: Hooks can be reused across multiple components after encapsulation
+5. **Unified Management**: Centralized Keys management prevents cache key conflicts
+6. **Code Standards**: Enforces standardized code organization for efficient team collaboration
 
 ### 📡 HTTP Requests
 
