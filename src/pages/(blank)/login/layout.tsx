@@ -6,9 +6,9 @@ import { getThemeSettings, useTheme } from '@/features/theme';
 
 import Header from './modules/Header';
 
-function useBgColor() {
-  const COLOR_WHITE = '#ffffff';
+const COLOR_WHITE = '#ffffff';
 
+function useBgColor() {
   const { darkMode } = useTheme();
 
   const { themeColor } = useAppSelector(getThemeSettings);
