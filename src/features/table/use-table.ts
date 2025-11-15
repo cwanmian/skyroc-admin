@@ -135,17 +135,28 @@ export function useTable<A extends AntDesign.TableApiFn>(config: Config<A>) {
     }
   }
 
-  function handleChange(paginationContext: TablePaginationConfig) {
-    updateSearchParams({
+  function handleChange(...args: AntDesign.TableOnChange) {
+    const [paginationContext, ...otherParams] = args;
+
+    let other: Parameters<A>[0] = {
       current: paginationContext.current,
       size: paginationContext.pageSize
-    });
+    } as Parameters<A>[0];
+
+    if (onChangeCallback) {
+      const params = onChangeCallback(paginationContext, ...otherParams);
+      if (params) {
+        other = params;
+      }
+    }
+    updateSearchParams(other);
   }
 
   return {
     columnChecks,
     data,
     empty,
+    form,
     run,
     searchParams,
     searchProps: {
@@ -159,7 +170,7 @@ export function useTable<A extends AntDesign.TableApiFn>(config: Config<A>) {
       columns,
       dataSource: data,
       loading,
-      onChange: onChangeCallback ?? handleChange,
+      onChange: handleChange,
       pagination,
       rowKey,
       ...rest

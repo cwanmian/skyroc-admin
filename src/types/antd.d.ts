@@ -32,12 +32,23 @@ declare namespace AntDesign {
    */
   type TableOperateType = 'add' | 'edit';
 
+  type TableOnChange = Parameters<NonNullable<TableProps['onChange']>>;
+
   type GetTableData<A extends TableApiFn> = A extends TableApiFn<infer T> ? T : never;
 
   type AntDesignTableConfig<A extends TableApiFn> = Pick<
     import('@sa/hooks').TableConfig<A, GetTableData<A>, TableColumn<TableDataWithIndex<GetTableData<A>>>>,
     'apiFn' | 'apiParams' | 'columns' | 'immediate' | 'isChangeURL'
   > & {
+    onChange?: (
+      ...args: TableOnChange
+    ) =>
+      | undefined
+      | import('@sa/hooks').TableConfig<
+          A,
+          GetTableData<A>,
+          TableColumn<TableDataWithIndex<GetTableData<A>>>
+        >['apiParams'];
     rowKey?: keyof GetTableData<A> | ((record: GetTableData<A>) => string | number);
-  } & Omit<TableProps, 'columns' | 'dataSource' | 'loading' | 'rowKey'>;
+  } & Omit<TableProps, 'columns' | 'dataSource' | 'loading' | 'onChange' | 'rowKey'>;
 }
