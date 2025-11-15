@@ -1,7 +1,7 @@
 import type { RouteObject } from 'react-router-dom';
 
 import { authRoutes } from '@/router';
-import { fetchGetUserRoutes } from '@/service/api';
+import { fetchGetUserInfo, fetchGetUserRoutes } from '@/service/api';
 import { QUERY_KEYS } from '@/service/keys';
 import { queryClient } from '@/service/queryClient';
 import { store } from '@/store';
@@ -14,7 +14,10 @@ export async function initAuthRoutes(addRoutes: (parent: string | null, route: R
 
   const reactAuthRoutes = mergeValuesByParent(authRoutes);
 
-  const userInfo = queryClient.getQueryData<Api.Auth.UserInfo>(QUERY_KEYS.AUTH.USER_INFO);
+  const userInfo = await queryClient.ensureQueryData<Api.Auth.UserInfo>({
+    queryFn: fetchGetUserInfo,
+    queryKey: QUERY_KEYS.AUTH.USER_INFO
+  });
 
   const isSuper = userInfo?.roles.includes(import.meta.env.VITE_STATIC_SUPER_ROLE);
 
