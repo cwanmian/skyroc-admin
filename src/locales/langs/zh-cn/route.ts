@@ -11,7 +11,6 @@ const route: App.I18n.Schema['translation']['route'] = {
   '(base)_function_super-page': '超级管理员可见',
   '(base)_function_tab': '标签页',
   '(base)_function_toggle-auth': '切换权限',
-  '(base)_function_use-request': 'useRequest 演示',
   '(base)_home': '首页',
   '(base)_manage': '系统管理',
   '(base)_manage_role': '角色管理',

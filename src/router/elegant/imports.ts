@@ -29,7 +29,6 @@ export const pages: Record<string, () => Promise<any>> = {
 "(base)_function_super-page": () => import("@/pages/(base)/function/super-page/index.tsx"),
 "(base)_function_tab": () => import("@/pages/(base)/function/tab/index.tsx"),
 "(base)_function_toggle-auth": () => import("@/pages/(base)/function/toggle-auth/index.tsx"),
-"(base)_function_use-request": () => import("@/pages/(base)/function/use-request/index.tsx"),
 "(base)_home": () => import("@/pages/(base)/home/index.tsx"),
 "(base)_manage": () => import("@/pages/(base)/manage/index.tsx"),
 "(base)_manage_role_[...slug]": () => import("@/pages/(base)/manage/role/[...slug].tsx"),

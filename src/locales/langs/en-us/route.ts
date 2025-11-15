@@ -11,7 +11,6 @@ const route: App.I18n.Schema['translation']['route'] = {
   '(base)_function_super-page': 'Super Admin Visible',
   '(base)_function_tab': 'Tab',
   '(base)_function_toggle-auth': 'Toggle Auth',
-  '(base)_function_use-request': 'useRequest Demo',
   '(base)_home': 'Home',
   '(base)_manage': 'System Manage',
   '(base)_manage_role': 'Role Manage',
