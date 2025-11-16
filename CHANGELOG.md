@@ -1,6 +1,78 @@
 # Changelog
 
 
+## [v2.2.0](https://github.com/Ohh-889/soybean-admin-react/compare/v2.1.2...v2.2.0) (2025-11-16)
+
+### &nbsp;&nbsp;&nbsp;🚀 Features
+
+- **docs**:
+  - enhance README with detailed TanStack Query integration, architecture design, and core features for improved data management &nbsp;-&nbsp; by @SkyRoc1 [<samp>(053f3)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/053f3c8)
+- **project**:
+  - integrate @tanstack/react-query for data fetching and caching &nbsp;-&nbsp; by @SkyRoc1 [<samp>(1d5ac)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/1d5acc1)
+  - add common enums and types for user management and system operations &nbsp;-&nbsp; by @SkyRoc1 [<samp>(d6908)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/d69088f)
+  - refactor API endpoints to use centralized URL constants and add service hooks for authentication, routing, and system management &nbsp;-&nbsp; by @SkyRoc1 [<samp>(027ba)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/027bab1)
+
+### &nbsp;&nbsp;&nbsp;🐞 Bug Fixes
+
+- **login**: update default username in login form and add primary color to submit button &nbsp;-&nbsp; by @SkyRoc1 [<samp>(72b73)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/72b73c0)
+
+### &nbsp;&nbsp;&nbsp;💅 Refactors
+
+- **api**:
+  - remove deprecated API module for authentication &nbsp;-&nbsp; by @SkyRoc1 [<samp>(f2bcc)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/f2bccea)
+  - improve error handling in token refresh and enhance type definitions for authentication and system management &nbsp;-&nbsp; by @SkyRoc1 [<samp>(36f58)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/36f5821)
+  - update fetchLogin function to accept a single params object and enhance useLogin hook with token validation &nbsp;-&nbsp; by @SkyRoc1 [<samp>(65296)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/6529672)
+  - replace FlatRequestInstance with RequestInstance for improved type consistency in error handling &nbsp;-&nbsp; by @SkyRoc1 [<samp>(5c63d)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/5c63d67)
+- **app**:
+  - move QueryClientProvider to main entry point for improved data management &nbsp;-&nbsp; by @SkyRoc1 [<samp>(50525)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/50525cf)
+- **auth**:
+  - streamline loading state management in useInitAuth hook by moving endLoading call to onSuccess condition &nbsp;-&nbsp; by @SkyRoc1 [<samp>(7c1e0)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/7c1e06a)
+  - simplify toLogin function by consolidating parameters and improving readability &nbsp;-&nbsp; by @SkyRoc1 [<samp>(5c4bb)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/5c4bbe5)
+  - enhance authentication flow by managing user state and clearing tabs on reset. close #80 &nbsp;-&nbsp; by @SkyRoc1 in https://github.com/Ohh-889/soybean-admin-react/issues/80 [<samp>(423d8)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/423d8e5)
+- **config**:
+  - initialize default theme, language, and dark mode in GlobalConfig constructor using local storage &nbsp;-&nbsp; by @SkyRoc1 [<samp>(9daf0)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/9daf09e)
+- **env**:
+  - update application title, description, and storage prefix for SkyrocAdmin &nbsp;-&nbsp; by @SkyRoc1 [<samp>(bf15c)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/bf15c34)
+- **global-menu**:
+  - introduce HorizontalMenuMode enum for improved menu display mode management &nbsp;-&nbsp; by @SkyRoc1 [<samp>(f5668)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/f5668ee)
+- **images**:
+  - remove unused soybean.jpg image to clean up asset directory &nbsp;-&nbsp; by @SkyRoc1 [<samp>(57d27)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/57d2704)
+- **login**:
+  - move COLOR_WHITE constant outside of useBgColor function for improved readability &nbsp;-&nbsp; by @SkyRoc1 [<samp>(1dbec)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/1dbecfe)
+- **project**:
+  - replace userInfo selector with useUserInfo hook for improved data fetching and handling &nbsp;-&nbsp; by @SkyRoc1 [<samp>(5e703)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/5e7036b)
+- **request**:
+  - remove use-request component and simplify request handling in favor of a new structure &nbsp;-&nbsp; by @SkyRoc1 [<samp>(c8da0)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/c8da042)
+  - remove useRequest component and related files to streamline request handling &nbsp;-&nbsp; by @SkyRoc1 [<samp>(6da88)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/6da88b4)
+- **router**:
+  - update user info fetching in initAuthRoutes to use ensureQueryData for improved data consistency &nbsp;-&nbsp; by @SkyRoc1 [<samp>(77032)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/770325e)
+  - implement dynamic router creation based on global configuration for improved flexibility &nbsp;-&nbsp; by @SkyRoc1 [<samp>(cc723)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/cc7238a)
+- **table**:
+  - enhance useTable hook by simplifying configuration and improving pagination handling. close #65 &nbsp;-&nbsp; by @SkyRoc1 in https://github.com/Ohh-889/soybean-admin-react/issues/65 [<samp>(cce04)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/cce04cb)
+  - update handleChange function to improve parameter handling and simplify onChange callback integration &nbsp;-&nbsp; by @SkyRoc1 [<samp>(56f1c)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/56f1c6e)
+- **vercel**:
+  - remove vercel.json configuration file to simplify deployment settings &nbsp;-&nbsp; by @SkyRoc1 [<samp>(ab925)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/ab92560)
+
+### &nbsp;&nbsp;&nbsp;📖 Documentation
+
+- **cursor**:
+  - refresh project-specific rules &nbsp;-&nbsp; by @Ohh-889 [<samp>(08b42)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/08b4241)
+  - update commenting and documentation style to reflect new React component conventions for Skyroc Admin &nbsp;-&nbsp; by @SkyRoc1 [<samp>(b60ce)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/b60ced3)
+
+### &nbsp;&nbsp;&nbsp;🏡 Chore
+
+- **prejiect**:
+  - update readme &nbsp;-&nbsp; by @SkyRoc1 [<samp>(8fb1c)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/8fb1cdc)
+- **project**:
+  - change name &nbsp;-&nbsp; by @SkyRoc1 [<samp>(00df3)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/00df37b)
+  - change url &nbsp;-&nbsp; by @SkyRoc1 [<samp>(a0fbe)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/a0fbe00)
+  - change all references related to soybean to "skyroc". &nbsp;-&nbsp; by @SkyRoc1 [<samp>(94c53)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/94c53d0)
+  - change the document link &nbsp;-&nbsp; by @SkyRoc1 [<samp>(c8f3c)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/c8f3cf5)
+
+### &nbsp;&nbsp;&nbsp;❤️ Contributors
+
+[![SkyRoc1](https://github.com/SkyRoc1.png?size=48)](https://github.com/SkyRoc1)&nbsp;&nbsp;[![Ohh-889](https://github.com/Ohh-889.png?size=48)](https://github.com/Ohh-889)&nbsp;&nbsp;
+
 ## [v2.1.2](https://github.com/Ohh-889/soybean-admin-react/compare/v2.1.1...v2.1.2) (2025-10-11)
 
 ### &nbsp;&nbsp;&nbsp;❤️ Contributors
