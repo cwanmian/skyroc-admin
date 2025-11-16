@@ -477,18 +477,17 @@ Thanks to the following contributors. If you want to contribute, please refer to
 
   <div>
    <p>QQ Group</p>
-    <img src="https://soybeanjs-1300612522.cos.ap-guangzhou.myqcloud.com/uPic/qq-soybean-admin-4.jpg" style="width:200px" />
+    <img src="https://assets.skyroc.me/qq-group01.jpg" style="width:200px" />
   </div>
 
  <div>
-  <p>Join the WeChat group via the QR code below</p>
-  <img src="https://soybeanjs-1300612522.cos.ap-guangzhou.myqcloud.com/uPic/wechat-soybeanjs.jpg" style="width:200px" />
+  <p>Add the WeChat below to contact the author and get invited to the WeChat group</p>
+  <img src="https://assets.skyroc.me/wx-avatar.jpg" style="width:200px" />
  </div>
 
  <div>
-  <p>Scan below to join the WeChat group</p>
-  <img src="
-  https://ohh-1321526050.cos.ap-nanjing.myqcloud.com/ohh-889.jpg" style="width:200px" />
+  <p>WeChat Group</p>
+  <img src="https://assets.skyroc.me/wx-group01.jpg" style="width:200px" />
  </div>
 
 ## License

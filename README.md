@@ -1,6 +1,6 @@
 <div align="center">
  <img src="./public/favicon.svg" width="160" />
- <h1>React SkyrocAdmin</h1>
+ <h1>SkyrocAdmin</h1>
   <span><a href="./README.en-US.md">English</a> | 中文</span>
 </div>
 
@@ -17,7 +17,7 @@
 
 ## 简介
 
-[`React SkyrocAdmin`](https://github.com/Ohh-889/skyroc-admin) 是一个与时俱进、功能强大、架构优雅的企业级中后台管理模板。
+[`SkyrocAdmin`](https://github.com/Ohh-889/skyroc-admin) 是一个与时俱进、功能强大、架构优雅的企业级中后台管理模板。
 
 **为什么选择 React SkyrocAdmin？**
 
@@ -465,9 +465,8 @@ function LoginPage() {
 
 ## 开源作者
 
-[Ohh-889](https://github.com/mufeng889)
+[Ohh-889](https://github.com/Ohh-889)
 
-[Soybean](https://github.com/honghuangdc)
 
 ## 贡献者
 
@@ -483,18 +482,17 @@ function LoginPage() {
 
   <div>
    <p>QQ交流群</p>
-    <img src="https://soybeanjs-1300612522.cos.ap-guangzhou.myqcloud.com/uPic/qq-soybean-admin-4.jpg" style="width:200px" />
+    <img src="https://assets.skyroc.me/qq-group01.jpg" style="width:200px" />
   </div>
 
  <div>
-  <p>添加下面微信邀请进微信群</p>
-  <img src="https://soybeanjs-1300612522.cos.ap-guangzhou.myqcloud.com/uPic/wechat-soybeanjs.jpg" style="width:200px" />
+  <p>添加下面微信添加作者，邀请进微信群</p>
+  <img src="https://assets.skyroc.me/wx-avatar.jpg" style="width:200px" />
  </div>
 
  <div>
-  <p>添加下面微信邀请进微信群</p>
-  <img src="
-  https://ohh-1321526050.cos.ap-nanjing.myqcloud.com/ohh-889.jpg" style="width:200px" />
+  <p>微信群</p>
+  <img src="https://assets.skyroc.me/wx-group01.jpg" style="width:200px" />
  </div>
 
 ## 开源协议
