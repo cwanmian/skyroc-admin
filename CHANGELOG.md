@@ -1,6 +1,17 @@
 # Changelog
 
 
+## [v2.2.1](https://github.com/Ohh-889/soybean-admin-react/compare/v2.2.0...v2.2.1) (2025-11-20)
+
+### &nbsp;&nbsp;&nbsp;💅 Refactors
+
+- **layout**: streamline user info prefetching by moving logic into RootLayout component and removing unused loader function &nbsp;-&nbsp; by @SkyRoc1 [<samp>(0400f)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/0400f4a)
+- **readme**: update group invitation details and image sources for QQ and WeChat groups; modify project title in README files &nbsp;-&nbsp; by @SkyRoc1 [<samp>(3aee1)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/3aee137)
+
+### &nbsp;&nbsp;&nbsp;❤️ Contributors
+
+[![SkyRoc1](https://github.com/SkyRoc1.png?size=48)](https://github.com/SkyRoc1)&nbsp;&nbsp;
+
 ## [v2.2.0](https://github.com/Ohh-889/soybean-admin-react/compare/v2.1.2...v2.2.0) (2025-11-16)
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
