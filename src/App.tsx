@@ -12,7 +12,7 @@ import { localStg } from './utils/storage';
 const hasToken = Boolean(localStg.get('token'));
 
 if (hasToken) {
-  await queryClient.prefetchQuery({
+  queryClient.prefetchQuery({
     queryFn: fetchGetUserInfo,
     queryKey: QUERY_KEYS.AUTH.USER_INFO
   });
