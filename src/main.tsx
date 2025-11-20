@@ -13,8 +13,6 @@ import { setupAppVersionNotification, setupDayjs, setupIconifyOffline, setupNPro
 import { queryClient } from './service/queryClient';
 
 function setupApp() {
-  setupI18n();
-
   const container = document.getElementById('root');
 
   if (!container) return;
@@ -30,6 +28,8 @@ function setupApp() {
       </Provider>
     </ErrorBoundary>
   );
+
+  setupI18n();
 
   setupNProgress();
 
