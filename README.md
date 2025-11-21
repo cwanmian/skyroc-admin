@@ -74,13 +74,13 @@
 ## 分支
 
 - `master` 分支: 最新稳定版本,基于 React19 + ReactRouter V7  版本
-- `v18-router6` 分支: 基于 React18 + ReactRouter V6 版本
+- `v1` 分支: 基于 React18 + ReactRouter V6 版本
 
-有问题都是会进行修复,如果需要使用旧版本,请切换到对应分支。 v18-router6 在未来3-5年依然会是市面上较为先进 功能强大的版本
+有问题都是会进行修复,如果需要使用旧版本,请切换到对应分支。 v1 在未来3-5年依然会是市面上较为先进 功能强大的版本
 
 ## 版本信息
 
-当前版本：**v2.1.2**
+当前版本：**v2.4.0**
 
 ### 技术栈版本
 
@@ -99,35 +99,17 @@
 
 ### 在线预览
 
-- **React19 版本:**
+- **React19（v2）版本:**
   - [预览地址](https://skyroc-admin.com/)
-  - [国内加速访问](https://skyroc-admin.pages.dev/)
   - [Github 仓库](https://github.com/Ohh-889/skyroc-admin)
   - [Gitee 仓库](https://gitee.com/sjgk_dl/react-admin)
+
+- **React18 版本 (v1):**
+  - [预览地址](https://admin-v1.skyroc.me/)
 
 ### 文档
 
 - [在线文档](https://admin-docs.skyroc.me) - 详尽的 Ant Design 风格文档
-
-### Vue版本
-
-- **NaiveUI 版本:**
-  - [预览地址](https://naive.soybeanjs.cn/) - 基于 Vue3 + NaiveUI 构建的清新优雅后台管理模板
-  - [Github 仓库](https://github.com/soybeanjs/soybean-admin) - 获取最新源码，参与开源贡献
-  - [Gitee 仓库](https://gitee.com/honghuangdc/soybean-admin) - 国内镜像仓库，访问更快捷
-  - 特点:
-    - 完整的 TypeScript 支持
-    - 丰富的主题配置
-    - 优雅的代码风格
-    - 完善的文档说明
-- **AntDesignVue 版本:**
-  - [预览地址](https://antd.soybeanjs.cn/)
-  - [Github 仓库](https://github.com/soybeanjs/soybean-admin-antd)
-  - [Gitee 仓库](https://gitee.com/honghuangdc/soybean-admin-antd)
-
-- **旧版:**
-  - [预览地址](https://legacy.soybeanjs.cn/)
-  - [Github 仓库](https://github.com/soybeanjs/soybean-admin/tree/legacy)
 
 
 ## 符合Ant Design风格的保姆级文档

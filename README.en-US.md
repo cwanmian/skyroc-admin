@@ -74,13 +74,13 @@ Whether you're learning the latest frontend technologies or developing enterpris
 ## Branches
 
 - **`master` branch**: Latest stable version, based on React19 + ReactRouter V7.
-- **`v18-router6` branch**: Legacy version, based on React18 + ReactRouter V6.
+- **`v1` branch**: Legacy version, based on React18 + ReactRouter V6.
 
-Both branches will continue to receive bug fixes. If you need the older version, switch to the appropriate branch. The `v18-router6` branch will remain advanced and feature-rich for 3-5 years.
+Both branches will continue to receive bug fixes. If you need the older version, switch to the appropriate branch. The `v1` branch will remain advanced and feature-rich for 3-5 years.
 
 ## Version Information
 
-Current Version: **v2.1.2**
+Current Version: **v2.4.0**
 
 ### Tech Stack Versions
 
@@ -99,11 +99,13 @@ Current Version: **v2.1.2**
 
 ### Live Preview
 
-- **React19 Version:**
+- **React19 (v2) Version:**
   - [Preview](https://skyroc-admin.com/)
-  - [Faster Access in China](https://skyroc-admin.pages.dev/)
   - [GitHub Repository](https://github.com/Ohh-889/skyroc-admin)
   - [Gitee Repository](https://gitee.com/sjgk_dl/react-admin)
+
+- **React18 (v1) Version:**
+  - [Preview](https://admin-v1.skyroc.me/)
 
 ### Documentation
 
