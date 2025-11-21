@@ -6,9 +6,9 @@ export function fetchGetConstantRoutes() {
   return request<Api.Route.MenuRoute[]>({ url: ROUTE_URLS.GET_CONSTANT_ROUTES });
 }
 
-/** get user routes */
-export function fetchGetUserRoutes() {
-  return request<Api.Route.UserRoute>({ url: ROUTE_URLS.GET_USER_ROUTES });
+/** get backend routes (完整路由结构) */
+export function fetchGetBackendRoutes() {
+  return request<Api.Route.BackendRouteResponse>({ url: ROUTE_URLS.GET_USER_ROUTES });
 }
 
 /** get user routes */

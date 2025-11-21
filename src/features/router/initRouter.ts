@@ -1,13 +1,13 @@
 import type { RouteObject } from 'react-router-dom';
 
 import { authRoutes } from '@/router';
-import { fetchGetUserInfo, fetchGetUserRoutes } from '@/service/api';
+import { fetchGetBackendRoutes, fetchGetUserInfo } from '@/service/api';
 import { QUERY_KEYS } from '@/service/keys';
 import { queryClient } from '@/service/queryClient';
 import { store } from '@/store';
 
-import { setHomePath } from './routeStore';
-import { filterAuthRoutesByDynamic, filterAuthRoutesByRoles, mergeValuesByParent } from './shared';
+import { setCacheRoutes, setHomePath } from './routeStore';
+import { filterAuthRoutesByRoles, mergeValuesByParent, transformBackendRoutesToReactRoutes } from './shared';
 
 export async function initAuthRoutes(addRoutes: (parent: string | null, route: RouteObject[]) => void) {
   const authRouteMode = import.meta.env.VITE_AUTH_ROUTE_MODE;
@@ -39,22 +39,47 @@ export async function initAuthRoutes(addRoutes: (parent: string | null, route: R
   } else {
     // 动态模式
     try {
-      const data = await queryClient.ensureQueryData<Api.Route.UserRoute>({
+      const data = await queryClient.ensureQueryData<Api.Route.BackendRouteResponse>({
         gcTime: Infinity,
-        queryFn: fetchGetUserRoutes,
+        queryFn: fetchGetBackendRoutes,
         queryKey: QUERY_KEYS.ROUTE.USER_ROUTES,
         staleTime: Infinity
       });
 
       store.dispatch(setHomePath(data.home));
 
-      const filteredRoutes = filterAuthRoutesByDynamic(reactAuthRoutes, data.routes);
+      const routeParentMap = new Map<string, string | null>();
 
-      filteredRoutes.forEach(({ parent, route }) => {
-        addRoutes(parent, route);
+      function collectParentInfo(routes: Api.Route.BackendRoute[], parent: string | null = null) {
+        routes.forEach(route => {
+          const routeParent = route.parent !== undefined ? route.parent : parent;
+          routeParentMap.set(route.name, routeParent ?? null);
+        });
+      }
+
+      collectParentInfo(data.routes, '(base)');
+
+      // 将后端路由结构转换为 React Router 路由结构
+      const { cacheRoutes, routes: reactRoutes } = transformBackendRoutesToReactRoutes(data.routes);
+
+      // 设置缓存路由
+      if (cacheRoutes.length > 0) {
+        store.dispatch(setCacheRoutes(cacheRoutes));
+      }
+
+      reactRoutes.forEach(routeArray => {
+        const parent = routeParentMap.get(routeArray.id as string);
+        if (parent) {
+          addRoutes(parent, [routeArray]);
+        } else {
+          addRoutes(null, [routeArray]);
+        }
       });
     } catch (error) {
-      console.error(error);
+      // 路由初始化失败是严重错误，需要记录日志
+
+      console.error('Failed to initialize auth routes:', error);
+      window.$message?.error('路由初始化失败，请刷新页面重试');
     }
   }
 }

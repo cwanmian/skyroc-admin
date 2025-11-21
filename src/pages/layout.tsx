@@ -1,7 +1,7 @@
 import type { RoutePath } from '@soybean-react/vite-plugin-react-router';
 import { Outlet, matchRoutes } from 'react-router-dom';
 
-import { usePrevious, useRoute, useRouter } from '@/features/router';
+import { usePrevious, useRoute } from '@/features/router';
 import { allRoutes } from '@/router';
 import { fetchGetUserInfo } from '@/service/api/auth.ts';
 import { useUserInfo } from '@/service/hooks';
@@ -86,9 +86,6 @@ const RootLayout = () => {
   const { handle, id, pathname } = route;
 
   const routeId = useRef<string>(null);
-
-  const router = useRouter();
-  console.log('router', router);
 
   const location = useRef<string | { path: string; replace: boolean } | null>(null);
 

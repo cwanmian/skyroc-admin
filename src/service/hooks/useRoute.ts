@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { fetchGetConstantRoutes, fetchGetUserRoutes, fetchIsRouteExist } from '../api';
+import { fetchGetBackendRoutes, fetchGetConstantRoutes, fetchIsRouteExist } from '../api';
 import { QUERY_KEYS } from '../keys';
 
 /**
@@ -30,8 +30,10 @@ export function useConstantRoutes(enabled = true) {
 export function useUserRoutes(enabled = true) {
   return useQuery({
     enabled,
-    queryFn: fetchGetUserRoutes,
-    queryKey: QUERY_KEYS.ROUTE.USER_ROUTES
+    gcTime: Infinity,
+    queryFn: fetchGetBackendRoutes,
+    queryKey: QUERY_KEYS.ROUTE.USER_ROUTES,
+    staleTime: Infinity
   });
 }
 
