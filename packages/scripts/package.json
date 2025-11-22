@@ -1,6 +1,6 @@
 {
   "name": "@sa/scripts",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "bin": {
     "sa": "./bin.ts"
   },

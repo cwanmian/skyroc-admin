@@ -1,7 +1,7 @@
 {
   "name": "skyroc-admin",
   "type": "module",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "private": false,
   "packageManager": "pnpm@10.4.1",
   "description": "A fresh and elegant admin template, based on React18、Vite5、TypeScript、Ant Design and UnoCSS. 一个基于React18、Vite5、TypeScript、Ant Design and UnoCSS的清新优雅的中后台模版。",

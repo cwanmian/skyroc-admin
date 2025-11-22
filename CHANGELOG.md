@@ -1,6 +1,26 @@
 # Changelog
 
 
+## [v2.5.0](https://github.com/Ohh-889/soybean-admin-react/compare/v2.4.0...v2.5.0) (2025-11-22)
+
+### &nbsp;&nbsp;&nbsp;🚀 Features
+
+- **menu**: add menu managemen &nbsp;-&nbsp; by @SkyRoc1 [<samp>(6f31c)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/6f31c33)
+
+### &nbsp;&nbsp;&nbsp;💅 Refactors
+
+- **router**: use layout for parent handling &nbsp;-&nbsp; by @SkyRoc1 [<samp>(7e326)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/7e32659)
+
+### &nbsp;&nbsp;&nbsp;🏡 Chore
+
+- **docs**:
+  - update README for v2.4.0 and rename legacy branch to v1 &nbsp;-&nbsp; by @SkyRoc1 [<samp>(22643)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/226439a)
+  - update README with separate docs links for v2 (React19) and v1 (React18) &nbsp;-&nbsp; by @SkyRoc1 [<samp>(449ee)</samp>](https://github.com/Ohh-889/soybean-admin-react/commit/449eef1)
+
+### &nbsp;&nbsp;&nbsp;❤️ Contributors
+
+[![SkyRoc1](https://github.com/SkyRoc1.png?size=48)](https://github.com/SkyRoc1)&nbsp;&nbsp;
+
 ## [v2.4.0](https://github.com/Ohh-889/soybean-admin-react/compare/v2.3.0...v2.4.0) (2025-11-21)
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
