@@ -262,7 +262,7 @@ export type LayoutCssVars = {
  *
  * @default chrome
  */
-export type PageTabMode = 'button' | 'chrome';
+export type PageTabMode = 'button' | 'chrome' | 'slider';
 export type ButtonTabProps = PageTabProps &
   Omit<React.ComponentProps<'div'>, 'className' | 'onClick' | 'prefix' | 'style'>;
 export interface PageTabProps {
@@ -301,6 +301,8 @@ export interface PageTabProps {
   mode?: PageTabMode;
   onClick: () => void;
   prefix: React.ReactNode;
+  /** The class of the slider tab */
+  sliderClass?: string;
   style?: React.CSSProperties;
   suffix?: React.ReactNode;
 }

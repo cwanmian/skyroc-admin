@@ -66,6 +66,7 @@ const theme: App.I18n.Schema['translation']['theme'] = {
     mode: {
       button: 'Button',
       chrome: 'Chrome',
+      slider: 'Slider',
       title: 'Tab Mode'
     },
     visible: 'Tab Visible'

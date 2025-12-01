@@ -66,6 +66,7 @@ const theme: App.I18n.Schema['translation']['theme'] = {
     mode: {
       button: '按钮风格',
       chrome: '谷歌风格',
+      slider: '滑块风格',
       title: '标签栏风格'
     },
     visible: '显示标签栏'

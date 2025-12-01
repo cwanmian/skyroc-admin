@@ -6,6 +6,7 @@ import type { ButtonTabProps } from '../../types';
 
 import ButtonTab from './ButtonTab';
 import ChromeTab from './ChromeTab';
+import SliderTab from './SliderTab';
 import SvgClose from './SvgClose';
 import styles from './index.module.css';
 import { ACTIVE_COLOR, createTabCssVars } from './shared';
@@ -24,6 +25,7 @@ const PageTab: FC<PageTabProps> = ({
   handleClose,
   mode = 'chrome',
   prefix,
+  sliderClass,
   style,
   suffix,
   ...rest
@@ -38,6 +40,10 @@ const PageTab: FC<PageTabProps> = ({
     chrome: {
       class: chromeClass,
       component: ChromeTab
+    },
+    slider: {
+      class: sliderClass,
+      component: SliderTab
     }
   };
 

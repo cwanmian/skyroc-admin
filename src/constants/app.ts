@@ -29,7 +29,8 @@ export const themeScrollModeOptions = transformRecordToOption(themeScrollModeRec
 
 export const themeTabModeRecord: Record<UnionKey.ThemeTabMode, App.I18n.I18nKey> = {
   button: 'theme.tab.mode.button',
-  chrome: 'theme.tab.mode.chrome'
+  chrome: 'theme.tab.mode.chrome',
+  slider: 'theme.tab.mode.slider'
 };
 
 export const themeTabModeOptions = transformRecordToOption(themeTabModeRecord);

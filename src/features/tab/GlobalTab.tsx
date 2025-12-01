@@ -86,7 +86,10 @@ const GlobalTab = () => {
                 mode={themeSettings.tab.mode}
                 tabId={item.id}
               >
-                <div id={item.id}>
+                <div
+                  className={themeSettings.tab.mode === 'slider' ? 'h-full' : undefined}
+                  id={item.id}
+                >
                   <PageTab
                     active={item.id === activeTabId}
                     activeColor={themeSettings.themeColor}
