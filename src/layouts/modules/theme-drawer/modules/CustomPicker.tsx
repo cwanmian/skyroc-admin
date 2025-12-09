@@ -98,7 +98,7 @@ const CustomPicker: FC<Props> = memo(({ isInfoFollowPrimary, label, theme, value
         disabled={label === 'info' && isInfoFollowPrimary}
         panelRender={customPanelRender}
         value={value}
-        onChange={(_, hex) => handleUpdateColor(hex, label as App.Theme.ThemeColorKey)}
+        onChangeComplete={hex => handleUpdateColor(hex.toHexString(), label as App.Theme.ThemeColorKey)}
         onOpenChange={() => {
           setSelectTheme(label);
         }}
