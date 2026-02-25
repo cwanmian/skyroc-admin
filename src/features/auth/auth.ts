@@ -66,6 +66,10 @@ export function useInitAuth() {
     startLoading();
 
     login(params, {
+      onError: error => {
+        endLoading();
+        console.error(error);
+      },
       onSuccess: async data => {
         localStg.set('token', data.token);
 
